@@ -19,6 +19,7 @@ artists = ['Solomun', 'Dubfire']
 
 DATABASE = 'Beatscrape.db'
 DATABASE2 = 'NBA.db'
+DATABASE3 = 'StriveDB2'
 
 app = Flask(__name__)
 app.secret_key = 'my precious'
@@ -410,7 +411,7 @@ def soundcloud():
 def sendr():
 	if request.method == 'POST':
 		global feed
-		conn = sqlite3.connect('Beatscrape.db')
+		conn = sqlite3.connect('StriveDB2.db')
 		cursor = conn.cursor()
 		posts = [dict(URL_sc=row[0], Time_sc=row[1] ) for row in cursor.fetchall()]
 		# FirstName
